@@ -88,8 +88,16 @@ export const CHAINS: Record<string, ChainConfig> = {
       USDC: token("0x01C5C0122039549AD1493B8220cABEdD739BC44E", "USDC", 6, true),
       KESm: token("0xC7e4635651E3e3Af82b61d3E23c159438daE3BbF", "KESm", 18),
     },
-    erc8004: null,
-    mento: null,
+    // Verified live: eth_getCode returns proxy bytecode for both registries.
+    erc8004: {
+      identityRegistry: "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+      reputationRegistry: "0x8004B663056A597Dffe9eCcC1965A193B7388713",
+    },
+    // Resolved from @mento-protocol/mento-sdk constants for CELO_SEPOLIA.
+    mento: {
+      broker: "0xB9Ae2065142EB79b6c5EB1E8778F883fad6B07Ba",
+      biPoolManager: "0xeCB3C656C131fCd9bB8D1d80898716bD684feb78",
+    },
   },
 };
 

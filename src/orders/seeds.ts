@@ -52,7 +52,7 @@ export function buildSeedOrders(familyWallet?: `0x${string}`): StandingOrder[] {
     order({
       title: "Operating float top-up",
       instruction:
-        "Maintain the agent's stablecoin float: if the cUSD balance is below 1.00, swap 0.50 CELO into cUSD; otherwise finalize without acting and report the healthy balance.",
+        "Maintain the agent's stablecoin float: if the cUSD balance is below 1.00 and the CELO balance is above 0.10, swap 0.10 CELO into cUSD; otherwise finalize without acting and report the balances.",
       recipients: [],
       intervalMinutes: 720,
     }),

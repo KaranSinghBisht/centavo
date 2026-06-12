@@ -38,9 +38,11 @@ const family = process.env.FAMILY_WALLET as `0x${string}` | undefined;
 if (family) {
   const familyBal = await clients.publicClient.getBalance({ address: family });
   if (familyBal < FAMILY_GAS_TARGET) {
-    const tx = await clients.walletClient.sendTransaction({ to: family, value: FAMILY_GAS_SEND });
+    // Never send more than a quarter of the agent's gas (testnet drips are tiny).
+    const send = balance / 4n < FAMILY_GAS_SEND ? balance / 4n : FAMILY_GAS_SEND;
+    const tx = await clients.walletClient.sendTransaction({ to: family, value: send });
     await clients.publicClient.waitForTransactionReceipt({ hash: tx });
-    logInfo("family wallet gassed for reputation feedback", { tx, amount: "0.3 CELO" });
+    logInfo("family wallet gassed for reputation feedback", { tx, celo: formatUnits(send, 18) });
   }
 }
 

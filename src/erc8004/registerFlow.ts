@@ -65,7 +65,10 @@ export async function ensureRegistered(
     agentId: agentId.toString(),
     registryTx: txHash,
     identityRegistry: cfg.erc8004.identityRegistry,
-    scanUrl: `https://8004scan.io/agents/celo/${agentId.toString()}`,
+    // 8004scan indexes mainnet; for testnets link the registration tx instead.
+    scanUrl: cfg.isTestnet
+      ? `${cfg.explorerBase}/tx/${txHash}`
+      : `https://8004scan.io/agents/celo/${agentId.toString()}`,
   };
   const file = path.join(dataDir, "identity.json");
   fs.mkdirSync(path.dirname(file), { recursive: true });
