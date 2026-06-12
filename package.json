@@ -13,6 +13,8 @@
     "cycle": "tsx scripts/run-cycle.ts",
     "daemon": "tsx scripts/run-daemon.ts",
     "prove": "tsx scripts/prove-celo.ts",
+    "golive": "tsx scripts/go-live.ts",
+    "pay": "tsx scripts/pay-quote.ts",
     "wallet": "tsx scripts/new-wallet.ts"
   },
   "dependencies": {
