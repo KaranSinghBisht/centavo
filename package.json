@@ -1,0 +1,33 @@
+{
+  "name": "centavo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Centavo — a budget-capped AI steward that runs everyday micro-payments (allowances, savings, remittance FX) as real transactions on Celo. ERC-8004 identity + x402 payments.",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsx src/server.ts",
+    "register": "tsx scripts/register-8004.ts",
+    "cycle": "tsx scripts/run-cycle.ts",
+    "daemon": "tsx scripts/run-daemon.ts",
+    "prove": "tsx scripts/prove-celo.ts",
+    "wallet": "tsx scripts/new-wallet.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.4",
+    "@mento-protocol/mento-sdk": "^3.2.8",
+    "dotenv": "^16.4.5",
+    "hono": "^4.12.23",
+    "openai": "^4.67.3",
+    "thirdweb": "^5.120.1",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
