@@ -50,16 +50,16 @@ standing orders (data/) ──▶ scheduler (cron cycle)
 
 ## Live checklist (mirrors the session task board)
 
-1. [x] Scaffold + port Steward brain (planner/policy/reasoner, + `swap` action)
-2. [ ] Verified Celo config + Mento swaps (`src/celo/mento.ts`) — research-gated
-3. [ ] ERC-8004 registration + agent card → **registry link for the tweet** — research-gated
-4. [ ] x402 payer + our paid endpoint — research-gated
-5. [ ] Standing orders + scheduler daemon (the activity engine)
-6. [ ] Dashboard UI (Celo theme)
-7. [ ] **Mainnet go-live** — BLOCKED on funding (see below)
-8. [ ] Self Agent ID (or India-unsupported screenshot)
-9. [ ] README + diagram + public GitHub
-10. [ ] Registration tweet (user) + submission via Celo Builders Skill
+1. [x] Scaffold + port Steward brain (planner/policy/reasoner, + `swap` action) — 13/13 tests
+2. [x] Verified Celo config + Mento swaps — live mainnet quote confirmed (1 cUSD → 128.25 KESm)
+3. [x] ERC-8004 code (registry client, agent card, register script) — **on-chain registration awaits funding**
+4. [x] x402 payer + paid `/api/quote` endpoint — paid mode awaits THIRDWEB_SECRET_KEY (free signup)
+5. [x] Standing orders + scheduler + spend ledger + reputation feedback wiring
+6. [x] Dashboard UI (Celo theme) — smoke-tested live
+7. [ ] **Mainnet go-live** — BLOCKED on funding (watcher polling; auto-resumes on arrival)
+8. [ ] Self Agent ID via Aadhaar — user phone flow at https://app.ai.self.xyz/register
+9. [x] README + mermaid diagram + MIT license + public repo: https://github.com/KaranSinghBisht/centavo
+10. [ ] Registration tweet (user, needs agentId from step 7) + submission before Jun 15, 9 AM GMT
 
 ## 🚨 User actions needed (Karan)
 
